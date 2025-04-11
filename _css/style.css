@@ -72,6 +72,7 @@ header {
     display: none;
 }
 
+
 /* quando a tela tiver 730px, os links não aparecerão na barra maior*/
 /*o flex-direction= column serve para deixar um item abaixo do outro*/
 /*.mobile_menu .login-button button é para o botão ficar na página toda*/
