@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+/*configuração do cabeçalho */
+
+header {
+    background-color: #187bcd;
+    box-shadow: 0px 3px 10px #17518a;
+}
+/* posicionamento dos elementos do cabeçalho - o "rem" ajuda o site a ficar responsivo*/
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #ffffff;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item { 
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.login-button button {
+    border: none;
+    background-color: #17518a;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.login-button button a {
+    color:#ffffff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.mobile-menu-icon {
+    display: none;     
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* quando a tela tiver 730px, os links não aparecerão na barra maior*/
+/*o flex-direction= column serve para deixar um item abaixo do outro*/
+/*.mobile_menu .login-button button é para o botão ficar na página toda*/
+/*.open{ display: open;} quando a classe for adicionada no menu ele vai aparecer*/
+
+@media screen and (max-width: 730px) {
+    .nav {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item{
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .mobile-menu .login-button{
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .mobile-menu .login-button button{
+        width: 100%;
+    }
+
+    .open{
+        display: block;
+    }
+}
+
