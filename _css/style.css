@@ -1,22 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@font-face{
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+}
 
 * {
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
 }
+
+p{
+    padding: 10px 15px 5px 10px;
+    width: 50%;               /* Ocupa metade da largura da página */
+      margin: left;           /* Centraliza horizontalmente */
+      text-align: justify;      /* (Opcional) Justifica o texto */
+      font-size: 1.0rem;
+      line-height: 1.6;
+      
+}
+
+.bannerMar {
+    background-image: url('_img/fundo.jpg'); /* Caminho da imagem */
+    background-size: cover;                  /* Faz a imagem cobrir toda a tela */
+    background-repeat: no-repeat;            /* Evita repetição */
+    background-position: center;             /* Centraliza a imagem */
+  }
+
+
 /*configuração do cabeçalho */
 
 header {
     background-color: #187bcd;
-    box-shadow: 0px 3px 10px #17518a;
+    box-shadow: 0px 10px 20px #fbfdff;
 }
+
 /* posicionamento dos elementos do cabeçalho - o "rem" ajuda o site a ficar responsivo*/
 
 .nav {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 6rem;
+    padding: 0.5rem 6rem;
 }
 
 .logo {
@@ -24,10 +50,17 @@ header {
     align-items: center;
 }
 
+.logoheader{
+    width: 50px;
+}
 .logo h1 {
     color: #ffffff;
+   
 }
-
+.bannerMar{
+    display: flex;
+    align-items: center;
+}
 .nav-list {
     display: flex;
     align-items: center;
@@ -35,12 +68,13 @@ header {
 
 .nav-list ul {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     list-style: none;
-}
+    margin-top: 20px;
+}    
 
 .nav-item { 
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .nav-link {
@@ -53,8 +87,9 @@ header {
 .login-button button {
     border: none;
     background-color: #17518a;
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 .login-button button a {
@@ -62,6 +97,7 @@ header {
     font-weight: 500;
     font-size: 1.1rem;
     text-decoration: none;
+    margin-top: 20px;
 }
 
 .mobile-menu-icon {
@@ -72,6 +108,51 @@ header {
     display: none;
 }
 
+.corpo-principal{ 
+    text-align: justify;
+    display: flex;
+}
+
+.corpo-principal h1{
+    font-family: 'Inter', sans-serif;
+    font-size: 3.0rem;
+    color: #051b4d;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 10px 15px 5px 10px;
+}
+
+.corpo-principal h2{
+    font-size: 2.0;
+    color: #cecece;
+    margin-top: 0px;
+    padding: 10px 15px 5px 10px;
+}
+
+.fotoequipe{
+    display: flex;
+    width: 350px;
+    position: absolute;
+    border:8px solid #17518a;
+    box-shadow: 1px 1px 4px black;
+}
+.fotoequipe figcaption{
+    opacity: 0;
+    position: absolute;
+    top:0px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+}
+
+.fotoequipe img{
+    width: 100%;
+    height: 100%;
+}
 
 /* quando a tela tiver 730px, os links não aparecerão na barra maior*/
 /*o flex-direction= column serve para deixar um item abaixo do outro*/
