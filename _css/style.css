@@ -6,29 +6,28 @@
         font-style: normal;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+.corpo-principal{
+    width: 100%;               /* Ocupa metade da largura da página */
+    margin: left;           /* Centraliza horizontalmente */
+    text-align: justify;      /* (Opcional) Justifica o texto */
+    font-size: 1.0rem;
+    line-height: 1.6;
+    display: flex;
+      
 }
 
-p{
+.div1, .div2 {
+    width: 50%;
+    padding: 20px;
+}
+.integrantes{
     padding: 10px 15px 5px 10px;
-    width: 50%;               /* Ocupa metade da largura da página */
+    width: 60%;               /* Ocupa metade da largura da página */
       margin: left;           /* Centraliza horizontalmente */
       text-align: justify;      /* (Opcional) Justifica o texto */
       font-size: 1.0rem;
       line-height: 1.6;
-      
 }
-
-.bannerMar {
-    background-image: url('_img/fundo.jpg'); /* Caminho da imagem */
-    background-size: cover;                  /* Faz a imagem cobrir toda a tela */
-    background-repeat: no-repeat;            /* Evita repetição */
-    background-position: center;             /* Centraliza a imagem */
-  }
-
 
 /*configuração do cabeçalho */
 
@@ -57,10 +56,7 @@ header {
     color: #ffffff;
    
 }
-.bannerMar{
-    display: flex;
-    align-items: center;
-}
+
 .nav-list {
     display: flex;
     align-items: center;
@@ -108,12 +104,8 @@ header {
     display: none;
 }
 
-.corpo-principal{ 
-    text-align: justify;
-    display: flex;
-}
 
-.corpo-principal h1{
+ h1{
     font-family: 'Inter', sans-serif;
     font-size: 3.0rem;
     color: #051b4d;
@@ -122,19 +114,51 @@ header {
     padding: 10px 15px 5px 10px;
 }
 
-.corpo-principal h2{
+ h2{
     font-size: 2.0;
     color: #cecece;
     margin-top: 0px;
     padding: 10px 15px 5px 10px;
 }
+h3{
+    font-size: 1.5;
+    color: #001036;
+    margin-top: 0px;
+    padding: 10px 15px 5px 10px;
+}
 
-.fotoequipe{
+.equipes{
+    display: flex;
+    size: 350px;
+    position: flex;
+    padding: 10px 15px 5px 10px;
+}
+
+.equipes  figcaption{
+    opacity: 0;
+    position: absolute;
+    top:0px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px 5px 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+}
+
+.equipes img{
+        width: 100%;
+        height: 100%;
+}
+
+.fotoequipe {
     display: flex;
     width: 350px;
     position: absolute;
     border:8px solid #17518a;
     box-shadow: 1px 1px 4px black;
+    padding: 10px 15px 5px 10px;
 }
 .fotoequipe figcaption{
     opacity: 0;
@@ -144,7 +168,7 @@ header {
     color: white;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 10px 15px 5px 10px;
     box-sizing: border-box;
     transition: opacity 1s;
 }
@@ -153,6 +177,8 @@ header {
     width: 100%;
     height: 100%;
 }
+
+
 
 /* quando a tela tiver 730px, os links não aparecerão na barra maior*/
 /*o flex-direction= column serve para deixar um item abaixo do outro*/
@@ -203,4 +229,3 @@ header {
         display: block;
     }
 }
-
