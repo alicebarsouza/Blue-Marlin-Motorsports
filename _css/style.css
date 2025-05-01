@@ -6,119 +6,45 @@
         font-style: normal;
 }
 
-.corpo-principal{
-    width: 100%;               /* Ocupa metade da largura da página */
-    margin: left;           /* Centraliza horizontalmente */
-    text-align: justify;      /* (Opcional) Justifica o texto */
-    font-size: 1.0rem;
-    line-height: 1.6;
-    display: flex;
-      
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
 }
 
-.div1, .div2 {
-    width: 50%;
+
+.corpo-principal{
+    min-height: 100vh;
+    max-width: 800px; /* Largura máxima do bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
     padding: 20px;
+    text-align: justify; /* Justifica o texto */
+    font-size: 1.2rem;
+    line-height: 1.8; /* Deixa o espaçamento entre linhas agradável */
+    color: #051b4d; 
 }
-.integrantes{
-    padding: 10px 15px 5px 10px;
-    width: 60%;               /* Ocupa metade da largura da página */
-      margin: left;           /* Centraliza horizontalmente */
-      text-align: justify;      /* (Opcional) Justifica o texto */
-      font-size: 1.0rem;
-      line-height: 1.6;
-}
+
 
 /*configuração do cabeçalho */
-
-header {
-    background-color: #187bcd;
-    box-shadow: 0px 10px 20px #fbfdff;
-}
-
-/* posicionamento dos elementos do cabeçalho - o "rem" ajuda o site a ficar responsivo*/
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 6rem;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logoheader{
-    width: 50px;
-}
-.logo h1 {
-    color: #ffffff;
-   
-}
-
-.nav-list {
-    display: flex;
-    align-items: center;
-}
-
-.nav-list ul {
-    display: flex;
-    justify-content: right;
-    list-style: none;
-    margin-top: 20px;
-}    
-
-.nav-item { 
-    margin: 0 10px;
-}
-
-.nav-link {
-    text-decoration: none;
-    font-size: 1.15rem;
-    color: #ffffff;
-    font-weight: 400;
-}
-
-.login-button button {
-    border: none;
-    background-color: #17518a;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.login-button button a {
-    color:#ffffff;
-    font-weight: 500;
-    font-size: 1.1rem;
-    text-decoration: none;
-    margin-top: 20px;
-}
-
-.mobile-menu-icon {
-    display: none;     
-}
-
-.mobile-menu {
-    display: none;
-}
-
 
  h1{
     font-family: 'Inter', sans-serif;
     font-size: 3.0rem;
     color: #051b4d;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding: 10px 15px 5px 10px;
+    padding: 20px 15px 5px 10px;
+    max-width: 800px; /* Largura máxima do bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    
 }
 
  h2{
     font-size: 2.0;
-    color: #cecece;
-    margin-top: 0px;
+    color: #17518a;
     padding: 10px 15px 5px 10px;
+    max-width: 800px; /* Largura máxima do bloco */
+    margin: 0 auto; 
 }
 h3{
     font-size: 1.5;
@@ -127,105 +53,230 @@ h3{
     padding: 10px 15px 5px 10px;
 }
 
-.equipes{
+/*configuração do menu */
+
+nav {
     display: flex;
-    size: 350px;
-    position: flex;
-    padding: 10px 15px 5px 10px;
+    padding: 13px 5%; /* Espaçamento interno */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #17518a; /* Cor de fundo do menu */
 }
 
-.equipes  figcaption{
-    opacity: 0;
-    position: absolute;
-    top:0px;
-    background-color: rgba(0,0,0,0.4);
-    color: white;
+ul {
+    list-style: none; /* Remove os marcadores da lista */
+    line-height: 0;
+}
+
+
+nav .logo{
+    width: 100px;
+}
+nav .logo img{
     width: 100%;
-    height: 100%;
-    padding: 10px 15px 5px 10px;
-    box-sizing: border-box;
-    transition: opacity 1s;
 }
 
-.equipes img{
-        width: 100%;
+nav ul li{
+    display: inline-block;
+    padding: 10px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+nav ul li a:hover{
+    color: rgb(0, 0, 0);
+}
+
+.menu-icon{
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img{
+    filter: invert(1);
+} 
+   
+@media (max-width: 770px) {
+    .menu-icon{
+       display: block;
+       cursor: pointer;
+       z-index: 10;
+    }
+    nav ul{
+        position: fixed; /* Fixa o menu no topo */
+        top: 0;
+        right: 0;
+        width: 60%;
         height: 100%;
+        display: flex; /* Esconde o menu padrão */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Exibe os itens do menu em coluna */
+        transform: translateX(100%);
+        transition: transform 0.6s ease-in; /* Transição suave */
+        background-color: #0000008c; /* Cor de fundo do menu */
+     
+    }
+    nav ul.open{
+        transform: translateX(0);
+       background-color: #17518a;
+    }
+    nav ul li{
+        margin: 10px 0; 
+    }
+    nav ul li a{
+        font-size:20px; 
+        padding: 10px 0; /* Espaçamento interno */
+    }
 }
 
-.fotoequipe {
+
+/*configuração dos membros da equipe */
+.member {
+    cursor: pointer;
     display: flex;
-    width: 350px;
-    position: absolute;
-    border:8px solid #17518a;
-    box-shadow: 1px 1px 4px black;
-    padding: 10px 15px 5px 10px;
-}
-.fotoequipe figcaption{
-    opacity: 0;
-    position: absolute;
-    top:0px;
-    background-color: rgba(0,0,0,0.4);
-    color: white;
-    width: 100%;
-    height: 100%;
-    padding: 10px 15px 5px 10px;
-    box-sizing: border-box;
-    transition: opacity 1s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px; /* Bordas arredondadas */
 }
 
-.fotoequipe img{
-    width: 100%;
-    height: 100%;
-}
-
-
-
-/* quando a tela tiver 730px, os links não aparecerão na barra maior*/
-/*o flex-direction= column serve para deixar um item abaixo do outro*/
-/*.mobile_menu .login-button button é para o botão ficar na página toda*/
-/*.open{ display: open;} quando a classe for adicionada no menu ele vai aparecer*/
-
-@media screen and (max-width: 730px) {
-    .nav {
-        padding: 1.5rem 4rem;
-    }
-    .nav-item {
-        display: none;
-    }
-    .login-button {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-    .mobile-menu-icon button {
-        color: transparent;
-        border: none;
+.member:hover {
         cursor: pointer;
-    }
+        transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */    
+}
+.member img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover; /* Corta a imagem para preencher o espaço */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+  
+.member h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2rem;
+    color: #000;
+}
+  
+.legenda {
+    display: none; /* Esconder a legenda inicialmente */
+    position: absolute;
+    bottom: 10;
+    opacity: 2.0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: rgba(0,0,0,0.5); /* Fundo escuro com opacidade */
+    color: #fff; /* Cor do texto */
+}
 
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
+.container-images:hover .legenda {
+    display: block; /* Mostrar a legenda ao passar o mouse */
+   position:absolute;
+} 
+  
+.container-images:hover img {
+        opacity: 0.5; /* Reduzir a opacidade da imagem ao passar o mouse */
+}
 
-    .mobile-menu .nav-item{
-        display: block;
-        padding-top: 1.2rem;
-    }
+.container-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+  
+.container-images {
+    position: relative;
+    display:block;
+    align-items: center;
+    justify-content: center;
+    height: auto; 
+    margin: 20px;
+    margin-top: 0px;
+}
+  
 
-    .mobile-menu .login-button{
-        display: block;
-        padding: 1rem 2rem;
-    }
+.on {
+    opacity: 1;
+}
+  
+/*configurações da identidade visual */
 
-    .mobile-menu .login-button button{
-        width: 100%;
-    }
+.logo-texto{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px; /* Bordas arredondadas */
+}
 
-    .open{
-        display: block;
-    }
+.logo-texto img{
+    width: 250px;
+}
+
+.logosID {
+    font-size: 1.2rem;
+    color: #001036;
+    margin-top: 0px;
+    position: fixed;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;
+    text-align: justify; /* Justifica o texto */
+    line-height: 1.8; /* Deixa o espaçamento entre linhas agradável */
+}
+
+.uso-logos img{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.uniforme-cores img{
+    width: 100%;
+}
+
+.patrocinadores img{
+    width: 400px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/*configurações dos projetos sociais */
+.geladeira{
+    min-height: 100vh;
+    max-width: 400px; /* Largura máxima do bloco */
+    margin-left: 300px;
+    padding: 0px;
+    text-align: justify; /* Justifica o texto */
+    font-size: 1.2rem;
+    line-height: 1.8; /* Deixa o espaçamento entre linhas agradável */
+    color: #051b4d; 
+}
+
+.geladeira img{
+    position: relative;
+    width: 100%;
 }
