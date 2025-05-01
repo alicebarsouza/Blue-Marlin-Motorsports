@@ -265,18 +265,23 @@ nav ul li a:hover{
 }
 
 /*configurações dos projetos sociais */
-.geladeira{
-    min-height: 100vh;
-    max-width: 400px; /* Largura máxima do bloco */
-    margin-left: 300px;
-    padding: 0px;
+
+.article {
+    column-count: 2;
+    column-gap: 1.2rem;
+    max-width: 800px; /* Largura máxima do bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;
     text-align: justify; /* Justifica o texto */
     font-size: 1.2rem;
     line-height: 1.8; /* Deixa o espaçamento entre linhas agradável */
+    margin-top: 0px;
     color: #051b4d; 
 }
 
-.geladeira img{
-    position: relative;
-    width: 100%;
+.article img {
+    width: 150%;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: block;
+    margin-top: 10px;
 }
