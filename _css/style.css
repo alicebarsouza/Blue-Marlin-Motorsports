@@ -13,6 +13,7 @@
     margin: 0;
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
+    background-color: none;
 }
 
 
@@ -156,37 +157,33 @@ h3 {
     font-size: 1.5em;
 }
 
-/*BLUE MARLIN 2025*/
 
-.container-fluid {
-    padding: 10px;
+/* Container do GIF */
+.gif {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    width: 100%;
 }
 
-.container-fluid .row {
-    margin-top: 20px;
-    padding: 80px;
-    margin-left: auto;
-
+/* Estilo da imagem GIF */
+.gif img {
+    max-width: 100%;        /* Garante que não ultrapasse a largura do container */
+    max-height: 80vh;       /* Altura máxima responsiva */
+    object-fit: contain;    /* Mantém proporções sem distorcer */
+    border-radius: 10px;    /* Bordas arredondadas (opcional) */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil (opcional) */
 }
 
-.container-fluid .row p {
-    margin: 20px 0;
-    line-height: 1.6;
-    font-size: 18px;
-    text-align: justify;
-    margin-right: 20px;
-}
-
-.container-fluid .row h2 {
-    font-size: 40px;
-    line-height: 1.2;
-    color: #111;
-}
-
-.container-fluid .row img {
-    width: 600px;
-    height: 100%;
-    border-radius: 10px;
+/* Versão responsiva para telas menores */
+@media (max-width: 768px) {
+    .gif {
+        min-height: 40vh;   /* Ajusta a altura em dispositivos móveis */
+    }
+    
+    .gif img {
+        max-height: 60vh;   /* Reduz a altura máxima em telas pequenas */
+    }
 }
 
 /*NOSSA HISTÓRIA*/
@@ -207,6 +204,7 @@ h3 {
     font-size: 40px;
     line-height: 1.2;
     color: #111;
+    margin-left: 0px;
 }
 
 .about .text h2 span {
