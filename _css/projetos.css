@@ -83,3 +83,53 @@ h2 span {
     line-height: 1.8;
     color: #051b4d;
 }
+
+/*==============================
+  RODAPÉ 
+==============================*/
+.footer {
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.footer .social-icons {
+  margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+  color: #003c61;
+  font-size: 1.3rem;
+  margin: 0 px;
+  transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #00bfff;
+}
+
+.footer .footer-copy {
+  margin: 5px 0;
+    text-align: center;
+
+}
+
+.footer .dev-link {
+  color: #003c61;
+  text-decoration: none;
+}
+
+.footer .dev-link:hover {
+  text-decoration: underline;
+}
+
+.footer .footer-address {
+  font-size: 1.0rem;
+  margin-top: 10px;
+    text-align: center;
+
+}
